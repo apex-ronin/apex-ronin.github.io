@@ -1,0 +1,59 @@
+# Build, test and (on main only) deploy apexronin.com to GitHub Pages.
+# One-time setup: repo Settings > Pages > Source = "GitHub Actions".
+# Optional: Settings > Variables > Actions > LEAD_ENDPOINT = https URL of the deployed /worker.
+name: site
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run test:unit
+      - name: Build
+        run: npm run build
+        env:
+          LEAD_ENDPOINT: ${{ vars.LEAD_ENDPOINT }}
+          BUILD_VERSION: ${{ github.sha }}
+      - run: npm run check
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Browser tests (axe, flows)
+        run: |
+          pip install playwright==1.48.0
+          python -m playwright install --with-deps chromium
+          python -m http.server 8080 --directory dist >/dev/null 2>&1 &
+          sleep 1
+          E2E_CHANNEL=chromium python tests/e2e/run_e2e.py email
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with: { path: dist }
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

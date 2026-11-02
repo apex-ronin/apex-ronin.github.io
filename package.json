@@ -1,0 +1,36 @@
+{
+  "name": "apexronin-site",
+  "version": "2.0.0",
+  "description": "apexronin.com: zero-runtime-dependency static site for Apex Ronin",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node tests/check-dist.mjs",
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "python3 tests/e2e/run_e2e.py email",
+    "test": "npm run test:unit && npm run build && npm run check",
+    "serve": "python3 -m http.server 8080 --directory dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apex-ronin/apex-ronin.github.io.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/apex-ronin/apex-ronin.github.io/issues"
+  },
+  "homepage": "https://github.com/apex-ronin/apex-ronin.github.io#readme",
+  "devDependencies": {
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/barlow-semi-condensed": "^5.3.0",
+    "axe-core": "^4.14.0"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

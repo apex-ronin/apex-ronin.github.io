@@ -1,0 +1,7 @@
+node_modules/
+dist/
+worker/wrangler.toml
+worker/.wrangler/
+.DS_Store
+tests/tools/_og.html
+__pycache__/
