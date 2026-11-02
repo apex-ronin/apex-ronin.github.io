@@ -1,0 +1,21 @@
+# Copy to wrangler.toml, then:
+#   npx wrangler d1 create apexronin-leads        (paste the database_id below)
+#   npx wrangler d1 execute apexronin-leads --remote --file=schema.sql
+#   npx wrangler secret put IP_SALT               (any long random string)
+#   npx wrangler secret put NOTIFY_WEBHOOK        (optional)
+#   npx wrangler deploy
+name = "apexronin-leads"
+main = "src/index.mjs"
+compatibility_date = "2026-10-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://apexronin.com"
+RATE_LIMIT_PER_HOUR = "8"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "apexronin-leads"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+
+# Optional: serve on your own domain instead of *.workers.dev
+# routes = [{ pattern = "leads.apexronin.com/lead", custom_domain = true }]
