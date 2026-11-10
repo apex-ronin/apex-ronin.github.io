@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catalog Exception Desk — feed-to-storefront diffing | Apex Ronin</title>
+<meta name="description" content="Detect price mismatches, availability conflicts, broken listings and missing products between merchant catalog exports and live storefronts.">
+<link rel="canonical" href="https://apexronin.com/catalog-exception-desk.html">
+<meta name="theme-color" content="#08090A">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/demo.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="nav__in">
+  <a class="brand" href="index.html"><span class="mon" aria-hidden="true"></span>Apex Ronin</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a class="nav__a" href="sub-radar.html">Sub Radar</a><a class="nav__a" href="trade-map-desk.html">Trade Map Desk</a>
+    <a class="nav__a" href="catalog-exception-desk.html" aria-current="page">Catalog Desk</a>
+    <a class="nav__a" href="fleet.html">Fleet Lab</a><a class="nav__a" href="pricing.html">Pricing</a><a class="nav__a" href="company.html">Company</a>
+    <a class="gate" href="b2g.html"><span aria-hidden="true">⌁</span><b>B2G</b></a>
+    <a class="nav__cta" href="#consult">Book a scoping call</a>
+  </nav>
+  <button class="burger" aria-expanded="false" aria-controls="sheet">Menu</button>
+</div>
+<div class="sheet" id="sheet" data-open="false"><span class="mono">Index</span>
+  <a href="sub-radar.html">Sub Radar</a><a href="trade-map-desk.html">Trade Map Desk</a><a href="catalog-exception-desk.html">Catalog Exception Desk</a>
+  <a href="fleet.html">Fleet Collision Lab</a><a href="pricing.html">Pricing</a><a href="company.html">Company</a><a href="b2g.html">⌁ Public sector</a></div>
+</header>
+<main id="main">
+<section class="ink grid-bg" style="padding-top:clamp(52px,6vw,84px);padding-bottom:clamp(44px,5vw,64px)">
+  <div class="wrap">
+    <div class="flex wrapf jc-b ai-c gap" style="margin-bottom:26px">
+      <span class="fileno">FILE 03 / STAGE THREE / ENTERPRISE</span><span class="tag tag--next">Scoped · consultation only</span>
+    </div>
+    <h1 class="d0" style="max-width:21ch" data-reveal>Your feed says one price. Your storefront says another. Nobody owns the gap.</h1>
+    <p class="lede mt" data-reveal style="max-width:54ch">Catalog Exception Desk compares an authorised catalog export against what customers actually see on the live storefront — without requiring admin access to your commerce stack.</p>
+    <div class="flex wrapf gap mt"><a class="btn btn--blade" href="#consult">Scope an engagement</a><a class="btn btn--ghost" href="#queue">Open the exception queue</a></div>
+  </div>
+</section>
+
+<section class="sect--tight" style="background:var(--paper-2);border-bottom:var(--rule-p)">
+  <div class="wrap cols c4">
+    <div><span class="mono" style="color:var(--blade)">Input</span><p style="margin:.3em 0 0;font-weight:700;font-size:.95rem">Authorised catalog export (CSV/JSON/XML)</p></div>
+    <div><span class="mono" style="color:var(--blade)">Input</span><p style="margin:.3em 0 0;font-weight:700;font-size:.95rem">Public storefront pages &amp; sitemaps</p></div>
+    <div><span class="mono" style="color:var(--blade)">Output</span><p style="margin:.3em 0 0;font-weight:700;font-size:.95rem">Ranked exception queue + CSV diff</p></div>
+    <div><span class="mono" style="color:var(--blade)">Model</span><p style="margin:.3em 0 0;font-weight:700;font-size:.95rem">$1,000/month corporate retainer</p></div>
+  </div>
+</section>
+
+<section class="sect" id="queue">
+  <div class="wrap">
+    <div class="flex wrapf jc-b ai-c gap mb">
+      <div><span class="fileno">Demonstration</span><h2 class="d1 mt">The exception queue.</h2></div><span class="tag tag--build">Simulated data</span>
+    </div>
+    <p class="lede mb">Synthetic merchant, 1,240 SKUs. Filter by class, open a row for the field diff and the impact estimate, or export the queue as CSV.</p>
+    <div class="demo" data-demo="cat"></div>
+    <p class="src mt">Simulated. SKUs, prices and impact estimates are illustrative. Impact = observed price delta × trailing 30d volume.</p>
+  </div>
+</section>
+
+<section class="sect hair">
+  <div class="wrap cols c-2-1">
+    <div>
+      <span class="fileno">Why enterprises buy this</span>
+      <h2 class="d1 mt">Feed hygiene is nobody's job until it's a $40,000 quarter.</h2>
+      <p class="lede mt">Merchandising owns the feed. Site ops owns the storefront. The discrepancy between them belongs to neither team.</p>
+      <table class="tab mt">
+        <thead><tr><th>Exception class</th><th>Typical cause</th><th>Impact shape</th></tr></thead>
+        <tbody>
+          <tr><td>Price mismatch</td><td>Feed updated, storefront cache stale</td><td>Margin loss or cart abandonment</td></tr>
+          <tr><td>Availability conflict</td><td>Stock sync lag, regional override</td><td>Oversell, cancellations, penalty fees</td></tr>
+          <tr><td>Broken listing</td><td>Image or variant removed upstream</td><td>Lost traffic to dead endpoints</td></tr>
+          <tr><td>Missing product</td><td>Feed row dropped, mapping broken</td><td>Silent revenue removal</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="card reg">
+      <span class="mono" style="color:var(--graphite)">Onboarding reality</span>
+      <p style="font-size:.92rem;color:var(--graphite-2);margin:.6em 0 1em">We need one thing from you: a scheduled export or read-only feed URL. Everything else is read from the public storefront.</p>
+      <hr class="rule" style="margin:16px 0">
+      <p class="mono" style="color:var(--graphite-2);line-height:1.8;margin:0">No SSO. No seat count. No dashboard logins for your team to forget.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="sect ink" id="consult">
+  <div class="wrap cols c-2-1">
+    <div><span class="fileno">Consultation</span><h2 class="d1 mt">Scope an engagement.</h2>
+      <p class="lede mt">This one is a call, not a form-only flow. Tell us the shape and we'll come back with a scoping slot.</p>
+      <p class="src mt" style="margin-top:1.6em">Corporate enquiries only. Sub Radar and Trade Map Desk are self-serve.</p></div>
+    <form class="card form" data-form="catalog-consult" novalidate>
+      <div class="form__bar" data-progress></div><p class="sr" data-live aria-live="polite"></p>
+      <div data-step>
+        <h3 class="d3">Contact</h3>
+        <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" required autocomplete="name" data-label="Name"><p class="err" data-err="name" hidden></p></div>
+        <div class="field"><label for="c-email">Work email</label><input id="c-email" name="email" type="email" required autocomplete="email" data-label="Work email"><p class="err" data-err="email" hidden></p></div>
+        <div class="field"><label for="c-role">Role</label><input id="c-role" name="role" required placeholder="e.g. Director of Ecommerce, Merchandising Ops" data-label="Role"><p class="err" data-err="role" hidden></p></div>
+        <input type="text" name="website" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px">
+      </div>
+      <div data-step hidden>
+        <h3 class="d3">Estate</h3>
+        <div class="field"><label for="c-org">Organisation</label><input id="c-org" name="org" required data-label="Organisation"><p class="err" data-err="org" hidden></p></div>
+        <div class="field"><label for="c-skus">Approximate SKU count</label>
+          <select id="c-skus" name="skus" required data-label="SKU count"><option value="">Select</option><option>Under 1,000</option><option>1,000–10,000</option><option>10,000–100,000</option><option>100,000+</option></select>
+          <p class="err" data-err="skus" hidden></p></div>
+        <div class="field"><label for="c-access">How can we read the feed?</label>
+          <select id="c-access" name="access" required data-label="Feed access"><option value="">Select</option><option>Scheduled CSV / XML / JSON URL</option><option>S3 / GCS bucket export</option><option>Merchant Center feed export</option><option>Need to discuss during scoping</option></select>
+          <p class="err" data-err="access" hidden></p></div>
+      </div>
+      <div data-step hidden>
+        <h3 class="d3">Confirm</h3>
+        <label class="check" for="c-consent"><input id="c-consent" type="checkbox" name="consent" required data-label="Consent"> <span>We can contact you about scoping a Catalog Exception Desk engagement.</span></label>
+        <p class="err" data-err="consent" hidden></p>
+      </div>
+      <div class="form__nav"><button type="button" class="btn btn--ghost btn--sm" data-prev hidden>Back</button><button type="button" class="btn btn--blade btn--sm" data-next>Continue</button></div>
+      <div class="form__out" data-result hidden aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="foot"><div class="wrap"><div class="foot__base" style="margin-top:0;border-top:0;padding-top:0"><span>© <span data-year></span> Apex Ronin</span><a href="pricing.html">Pricing</a><a href="company.html#contact">Contact</a><a class="secret" href="primordial-galaxy.html">⌁ primordial galaxy</a></div></div></footer>
+<script src="assets/config.js"></script><script type="module" src="assets/site.js"></script>
+<script type="module" src="assets/demos/catalog.js"></script>
+</body></html>
