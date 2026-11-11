@@ -33,13 +33,11 @@ jobs:
       - run: npm run check
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - name: Browser tests (axe, flows)
+      - name: Serve-level route tests
         run: |
-          pip install playwright==1.48.0
-          python -m playwright install --with-deps chromium
           python -m http.server 8080 --directory dist >/dev/null 2>&1 &
           sleep 1
-          E2E_CHANNEL=chromium python tests/e2e/run_e2e.py email
+          python tests/e2e/run_e2e.py
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with: { path: dist }

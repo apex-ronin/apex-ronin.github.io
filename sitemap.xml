@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://apexronin.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://apexronin.com/sub-radar.html</loc><priority>0.9</priority></url>
-  <url><loc>https://apexronin.com/pricing.html</loc><priority>0.8</priority></url>
-  <url><loc>https://apexronin.com/trade-map-desk.html</loc><priority>0.7</priority></url>
-  <url><loc>https://apexronin.com/catalog-exception-desk.html</loc><priority>0.7</priority></url>
-  <url><loc>https://apexronin.com/fleet.html</loc><priority>0.6</priority></url>
-  <url><loc>https://apexronin.com/company.html</loc><priority>0.6</priority></url>
-  <url><loc>https://apexronin.com/b2g.html</loc><priority>0.5</priority></url>
-  <url><loc>https://apexronin.com/primordial-galaxy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://apexronin.com/</loc><lastmod>2026-11-10</lastmod></url>
 </urlset>
