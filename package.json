@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test:unit": "node tests/check.mjs",
-    "build": "node -e \"import('node:fs').then(fs=>{fs.rmSync('dist',{recursive:true,force:true});fs.mkdirSync('dist',{recursive:true});for(const f of fs.readdirSync('.')){if(['.git','.github','dist','node_modules','package.json','package-lock.json','tests'].includes(f))continue;fs.cpSync(f,'dist/'+f,{recursive:true});}})\"",
+    "build": "node -e \"import('node:fs').then(fs=>{fs.rmSync('dist',{recursive:true,force:true});fs.mkdirSync('dist',{recursive:true});for(const f of fs.readdirSync('.')){if(['.git','.github','dist','node_modules','package.json','package-lock.json','tests','AGENTS.md','CLAUDE.md','README.md'].includes(f))continue;fs.cpSync(f,'dist/'+f,{recursive:true});}})\"",
     "check": "node tests/check.mjs"
   }
 }
